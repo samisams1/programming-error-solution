@@ -4,30 +4,19 @@ Start script missing error when running npm start
 
 I'm receiving this error when trying to debug my node application using the npm start command.
 
-Error:
-npm ERR! Windows_NT 6.3.9600
-npm ERR! argv "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "start"
-npm ERR! node v0.12.7
-npm ERR! npm  v2.11.3
-
-npm ERR! missing script: start
+> npm start
+npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
+npm ERR! Missing script: "start"
 npm ERR!
-npm ERR! If you need help, you may report this error at:
-npm ERR!     <https://github.com/npm/npm/issues>npm ERR! Please include the following file with any support request:
-npm ERR!     C:\Users\andrmoll.NORTHAMERICA\Documents\GitHub\SVIChallenge\npm-debug.log
+npm ERR! Did you mean one of these?
+npm ERR!     npm star # Mark your favorite packages       
+npm ERR!     npm stars # View packages marked as favorites
+npm ERR!
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
 
-From the debug file:
-Error: missing script: start
-       at run (C:\Program Files\nodejs\node_modules\npm\lib\run-script.js:142:19)
-       at C:\Program Files\nodejs\node_modules\npm\lib\run-script.js:58:5
-       at C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:345:5
-       at checkBinReferences_ (C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:309:45)
-       at final (C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:343:3)
-       at then (C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:113:5)
-       at C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:300:12
-       at evalmachine.<anonymous>:334:14
-       at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:102:5
-       at FSReqWrap.oncomplete (evalmachine.<anonymous>:95:15
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\forsa\AppData\Local\npm-cache\_logs\2022-07-12T00_29_54_787Z-debug-0.log
 
 
 
@@ -35,7 +24,7 @@ It looks like you might not have defined a start script in your package.json fil
 
 If there is a server.js file in the root of your package, then npm will default the start command to node server.js.
 
-https://docs.npmjs.com/misc/scripts#default-values
+
 
 You could either change the name of your application script to server.js or add the following to your package.json
 
@@ -43,3 +32,7 @@ You could either change the name of your application script to server.js or add 
     "start": "node your-script.js"
 }
 Or ... you could just run node your-script.js directly
+
+link: https://www.youtube.com/watch?v=5evYVOjQ4nM
+
+
